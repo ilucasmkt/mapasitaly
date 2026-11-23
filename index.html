@@ -188,8 +188,8 @@
         "offers": {
             "@type": "Offer",
             "url": "https://mapadocatolico.com.br/",
-            "priceCurrency": "BRL",
-            "price": "47.00",
+            "priceCurrency": "EUR",
+            "price": "17.00",
             "priceValidUntil": "2026-12-31",
             "availability": "https://schema.org/InStock",
             "shippingDetails": {
@@ -216,7 +216,7 @@
                 "shippingRate": {
                     "@type": "MonetaryAmount",
                     "value": "0",
-                    "currency": "BRL"
+                    "currency": "EUR"
                 }
             },
             "hasMerchantReturnPolicy": {
@@ -833,9 +833,9 @@
 
                     <p id="original-price-display"
                         class="text-center text-muted-foreground line-through decoration-destructive text-sm font-medium">
-                        Da R$ 97,00 a</p>
+                        Da € 37,00 a</p>
                     <div class="flex items-center justify-center gap-2 mb-2">
-                        <p id="price-display" class="text-5xl font-black font-sans text-foreground">R$ 47,00</p>
+                        <p id="price-display" class="text-5xl font-black font-sans text-foreground">€ 17,00</p>
                     </div>
                     <p id="payment-info" class="text-sm text-center text-muted-foreground mb-8">Pagamento unico</p>
 
@@ -1184,9 +1184,9 @@
         const plans = {
             digital: {
                 title: 'Mappa della Bibbia',
-                value: 47.00,
-                originalValue: 97.00,
-                price: 'R$ 47,00',
+                value: 17.00,
+                originalValue: 37.00,
+                price: '€ 17,00',
                 info: 'Pagamento unico',
                 link: 'https://pay.mapadocatolico.com.br/checkout/mapa-da-biblia',
                 image: 'assets/img/3d5abdfb.png',
@@ -1237,19 +1237,19 @@
             if (priceElement) {
                 if (plan.installment) {
                     const installmentTotal = plan.installment * currentQuantity;
-                    priceElement.innerHTML = `<span class="block text-lg font-bold text-center">fino a 12 rate da</span> ${installmentTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
+                    priceElement.innerHTML = `<span class="block text-lg font-bold text-center">fino a 12 rate da</span> ${installmentTotal.toLocaleString('it-IT', { style: 'currency', currency: 'EUR' })}`;
                 } else {
-                    priceElement.textContent = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                    priceElement.textContent = total.toLocaleString('it-IT', { style: 'currency', currency: 'EUR' });
                 }
             }
 
             if (paymentInfoElement && plan.installment) {
-                paymentInfoElement.innerHTML = `<span class="text-base text-foreground">oppure in un'unica soluzione <strong>${total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</strong></span><br><strong>Spedizione Gratuita</strong> in tutto il Brasile`;
+                paymentInfoElement.innerHTML = `<span class="text-base text-foreground">oppure in un'unica soluzione <strong>${total.toLocaleString('it-IT', { style: 'currency', currency: 'EUR' })}</strong></span><br><strong>Spedizione Gratuita</strong> in tutto il Brasile`;
             }
 
             const originalPriceDisplay = document.getElementById('original-price-display');
             if (originalPriceDisplay) {
-                originalPriceDisplay.textContent = `Da ${originalTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} a`;
+                originalPriceDisplay.textContent = `Da ${originalTotal.toLocaleString('it-IT', { style: 'currency', currency: 'EUR' })} a`;
             }
         }
 
