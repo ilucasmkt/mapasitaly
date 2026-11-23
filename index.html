@@ -798,31 +798,7 @@
                             class="w-full h-auto">
                     </div>
 
-                    <!-- Plan Toggle -->
-                    <div class="flex justify-center mb-6 mt-24">
-                        <div class="bg-muted p-1 rounded-full flex relative">
-                            <button onclick="switchPlan('digital')" data-plan="digital"
-                                class="toggle-btn w-32 px-4 py-2 rounded-full text-sm font-bold transition-all bg-background text-foreground shadow-sm">Digitale</button>
-                            <button onclick="switchPlan('impressa')" data-plan="impressa"
-                                class="toggle-btn w-32 px-4 py-2 rounded-full text-sm font-bold transition-all text-muted-foreground hover:bg-muted font-medium">Stampata</button>
-                        </div>
-                    </div>
-
-                    <!-- Quantity Control (Hidden by default) -->
-                    <div id="quantity-control"
-                        class="hidden flex items-center justify-center gap-4 mb-6 transition-all">
-                        <span
-                            class="text-sm font-bold text-muted-foreground uppercase tracking-wider">Quantità:</span>
-                        <div class="flex items-center bg-muted rounded-full p-1">
-                            <button onclick="updateQuantity(-1)"
-                                class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-background font-bold text-lg transition-colors">-</button>
-                            <span id="quantity-display" class="w-8 text-center font-bold">1</span>
-                            <button onclick="updateQuantity(1)"
-                                class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-background font-bold text-lg transition-colors">+</button>
-                        </div>
-                    </div>
-
-
+                    <div class="mt-24"></div>
 
                     <!-- Discount Banner -->
                     <div
@@ -857,7 +833,6 @@
                                     class="text-primary"></i></div> <span>14 Giorni di Garanzia</span>
                         </li>
                     </ul>
-                    <p id="withdrawal-note-print" class="hidden text-xs text-center mb-4 text-muted-foreground font-serif">Hai il diritto di recedere entro 14 giorni dal ricevimento del prodotto, senza dover fornire alcuna motivazione. <a href="politica-rimborso.html" class="underline">Maggiori informazioni</a>.</p>
                     <a id="checkout-link" href="https://pay.mapadocatolico.com.br/checkout/mapa-da-biblia" target="_self"
                         rel="noopener noreferrer" class="w-full block">
                         <button
@@ -1040,7 +1015,7 @@
                             size="20"></i>
                     </summary>
                     <div class="text-muted-foreground font-serif text-sm px-2 leading-relaxed mt-2">
-                        Offriamo entrambe le opzioni! Puoi scegliere la <strong>Versione Digitale</strong>, da scaricare e consultare ovunque tu voglia, oppure la <strong>Versione Stampata (Libro)</strong>, che spediamo direttamente a casa tua con <strong>spedizione gratuita</strong>. In entrambi i casi ricevi l'accesso alla nostra area riservata ai membri con la versione digitale della Mappa della Bibbia.
+                        La Mappa della Bibbia è <strong>100% digitale</strong>: la scarichi in formato PDF e la consulti ovunque tu voglia. Se preferisci, puoi anche stamparla e rilegarla come più ti piace. Ricevi inoltre l'accesso alla nostra area riservata ai membri.
                     </div>
                 </details>
 
@@ -1054,7 +1029,7 @@
                             size="20"></i>
                     </summary>
                     <div class="text-muted-foreground font-serif text-sm px-2 leading-relaxed mt-2">
-                        Per la <strong>Versione Digitale</strong>, l'accesso arriva alla tua <strong>e-mail</strong> subito dopo la conferma (assicurati di inserire correttamente e-mail e WhatsApp, perché inviamo l'accesso a entrambi). Per la <strong>Versione Stampata</strong>, la spedizione avviene tramite <strong>Poste o corriere, entrambi con tracciamento</strong>, e ricevi subito anche l'<strong>accesso digitale a vita</strong> via e-mail!
+                        L'accesso arriva alla tua <strong>e-mail</strong> subito dopo la conferma del pagamento (assicurati di inserire correttamente e-mail e WhatsApp, perché inviamo l'accesso a entrambi).
                     </div>
                 </details>
 
@@ -1278,13 +1253,7 @@
             checkoutLink.href = finalLink;
         }
 
-        function updateConsent(planType) {
-            const n = document.getElementById('withdrawal-note-print');
-            if (n) n.classList.toggle('hidden', planType === 'digital');
-        }
-
         function switchPlan(planType) {
-            updateConsent(planType);
             currentPlanType = planType;
             const plan = plans[planType];
 
@@ -1363,7 +1332,6 @@
         }
         updateDate();
 
-        updateConsent(currentPlanType);
     </script>
     <!-- Swiper JS -->
     <script src="assets/js/4408ecb4.js"></script>
