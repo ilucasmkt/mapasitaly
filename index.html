@@ -854,23 +854,16 @@
                         </li>
                         <li class="flex gap-1 text-sm font-bold text-foreground items-center">
                             <div class="bg-primary/10 p-1 rounded-full"><i data-lucide="check" size="14"
-                                    class="text-primary"></i></div> <span>30 Giorni di Garanzia</span>
+                                    class="text-primary"></i></div> <span>14 Giorni di Garanzia</span>
                         </li>
                     </ul>
-                    <div id="consent-digital" class="mb-4 p-3 rounded-lg border border-border bg-background text-left">
-                        <label class="flex items-start gap-3 cursor-pointer text-xs text-muted-foreground font-serif leading-relaxed">
-                            <input type="checkbox" id="consent-checkbox" class="mt-0.5 h-4 w-4 shrink-0">
-                            <span>Richiedo l'accesso immediato al contenuto digitale e riconosco che, una volta iniziata la fornitura, <strong>perdo il diritto di recesso di 14 giorni</strong>. Resta valida la garanzia di soddisfazione di 30 giorni.</span>
-                        </label>
-                        <p id="consent-error" class="hidden text-xs text-destructive mt-2">Per continuare, spunta la casella qui sopra.</p>
-                    </div>
                     <p id="withdrawal-note-print" class="hidden text-xs text-center mb-4 text-muted-foreground font-serif">Hai il diritto di recedere entro 14 giorni dal ricevimento del prodotto, senza dover fornire alcuna motivazione. <a href="politica-rimborso.html" class="underline">Maggiori informazioni</a>.</p>
                     <a id="checkout-link" href="https://pay.mapadocatolico.com.br/checkout/mapa-da-biblia" target="_self"
                         rel="noopener noreferrer" class="w-full block">
                         <button
                             class="inline-flex items-center justify-center rounded-md text-base font-medium transition-colors h-14 px-8 py-2 w-full bg-primary text-primary-foreground hover:opacity-90 shadow-lg uppercase tracking-wide">LA VOGLIO! 📖</button>
                     </a>
-                    <p class="text-xs text-center mt-4 text-muted-foreground">Acquisto 100% sicuro e garanzia di 30 giorni.
+                    <p class="text-xs text-center mt-4 text-muted-foreground">Acquisto 100% sicuro e garanzia di 14 giorni.
                     </p>
                 </div>
             </div>
@@ -1008,11 +1001,11 @@
                 <div class="mx-auto flex justify-center mb-6 text-primary">
                     <i data-lucide="shield-check" width="48" height="48"></i>
                 </div>
-                <h3 class="text-2xl font-bold font-sans mb-4">30 Giorni di Garanzia</h3>
+                <h3 class="text-2xl font-bold font-sans mb-4">14 Giorni di Garanzia</h3>
                 <p class="text-muted-foreground font-serif leading-relaxed">
-                    Abbiamo tanta fiducia nella qualità del nostro materiale da offrirti una garanzia di soddisfazione di 30 giorni: se non sei pienamente soddisfatto, ti rimborsiamo il 100% di quanto pagato entro questo periodo.
+                    Abbiamo tanta fiducia nella qualità del nostro materiale da offrirti una garanzia di soddisfazione di 14 giorni: se non sei pienamente soddisfatto, ti rimborsiamo il 100% di quanto pagato entro questo periodo.
                     <br><br>
-                    <span class="text-sm">Questa garanzia è un vantaggio in più offerto da noi e non pregiudica i diritti che la legge ti riconosce come consumatore, incluso il diritto di recesso di 14 giorni previsto dal Codice del Consumo. Per la versione digitale, il diritto di recesso non si applica se richiedi l\'accesso immediato e riconosci di perderlo; resta comunque valida la garanzia di soddisfazione di 30 giorni. <a href="politica-rimborso.html" class="underline hover:text-primary">Maggiori informazioni</a>.</span>
+                    <span class="text-sm">Questa garanzia è un vantaggio in più offerto da noi e non pregiudica i diritti che la legge ti riconosce come consumatore, incluso il diritto di recesso di 14 giorni previsto dal Codice del Consumo.  <a href="politica-rimborso.html" class="underline hover:text-primary">Maggiori informazioni</a>.</span>
                 </p>
             </div>
         </div>
@@ -1204,7 +1197,7 @@
                     'Mappa della Bibbia Completa',
                     '+3 Bonus Esclusivi',
                     'Accesso a Vita',
-                    '30 Giorni di Garanzia'
+                    '14 Giorni di Garanzia'
                 ]
             },
             impressa: {
@@ -1286,9 +1279,7 @@
         }
 
         function updateConsent(planType) {
-            const c = document.getElementById('consent-digital');
             const n = document.getElementById('withdrawal-note-print');
-            if (c) c.classList.toggle('hidden', planType !== 'digital');
             if (n) n.classList.toggle('hidden', planType === 'digital');
         }
 
@@ -1372,21 +1363,6 @@
         }
         updateDate();
 
-        // Consenso esplicito per contenuto digitale (art. 59, lett. o, Codice del Consumo)
-        checkoutLink.addEventListener('click', function (e) {
-            if (currentPlanType === 'digital') {
-                const cb = document.getElementById('consent-checkbox');
-                if (cb && !cb.checked) {
-                    e.preventDefault();
-                    const err = document.getElementById('consent-error');
-                    if (err) err.classList.remove('hidden');
-                    document.getElementById('consent-digital')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-            }
-        });
-        document.getElementById('consent-checkbox')?.addEventListener('change', function () {
-            if (this.checked) document.getElementById('consent-error')?.classList.add('hidden');
-        });
         updateConsent(currentPlanType);
     </script>
     <!-- Swiper JS -->
