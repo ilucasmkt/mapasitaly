@@ -455,19 +455,30 @@
                 Del Génesis al Apocalipsis: entiende todos los libros de la Biblia a través de mapas visuales, según la tradición católica.
             </h2>
 
-            <div class="max-w-sm mx-auto mb-32 md:mb-40">
-                <div id="vid_68559ea8bb5e4a0d08dca0ad"
-                    style="position: relative; width: 100%; padding: 133.33333333333331% 0 0;"> <img
-                        id="thumb_68559ea8bb5e4a0d08dca0ad"
-                        src="https://images.converteai.net/b3f75e50-91c2-41a9-b5e6-4cde2919d601/players/68559ea8bb5e4a0d08dca0ad/thumbnail.jpg"
-                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;"
-                        alt="thumbnail">
-                    <div id="backdrop_68559ea8bb5e4a0d08dca0ad"
-                        style=" -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%; ">
+            <div class="max-w-2xl mx-auto mb-32 md:mb-40">
+                <div class="swiper presentationSwiper rounded-2xl overflow-hidden shadow-xl border border-border/50 bg-white" style="aspect-ratio: 1200/848;">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="../assets/es/prev1.webp" alt="Página 1 del Mapa de la Biblia" class="w-full h-full object-contain" loading="lazy">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../assets/es/prev2.webp" alt="Página 2 del Mapa de la Biblia" class="w-full h-full object-contain" loading="lazy">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../assets/es/prev3.webp" alt="Página 3 del Mapa de la Biblia" class="w-full h-full object-contain" loading="lazy">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../assets/es/prev4.webp" alt="Página 4 del Mapa de la Biblia" class="w-full h-full object-contain" loading="lazy">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../assets/es/prev5.webp" alt="Página 5 del Mapa de la Biblia" class="w-full h-full object-contain" loading="lazy">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../assets/es/prev6.webp" alt="Página 6 del Mapa de la Biblia" class="w-full h-full object-contain" loading="lazy">
+                        </div>
                     </div>
+                    <div class="swiper-pagination"></div>
                 </div>
-                <script type="text/javascript"
-                    id="scr_68559ea8bb5e4a0d08dca0ad"> var s = document.createElement("script"); s.src = "https://scripts.converteai.net/b3f75e50-91c2-41a9-b5e6-4cde2919d601/players/68559ea8bb5e4a0d08dca0ad/player.js", s.async = !0, document.head.appendChild(s); </script>
             </div>
 
             <div class="bg-primary rounded-[2.5rem] p-8 md:p-12 text-primary-foreground shadow-2xl relative">
@@ -1339,6 +1350,15 @@
     <script>
 
 
+
+        new Swiper(".presentationSwiper", {
+            slidesPerView: 1,
+            loop: true,
+            grabCursor: true,
+            speed: 600,
+            autoplay: { delay: 2500, disableOnInteraction: false },
+            pagination: { el: ".presentationSwiper .swiper-pagination", clickable: true },
+        });
 
         var productCarousel = new Swiper(".productCarousel", {
             slidesPerView: 1,
